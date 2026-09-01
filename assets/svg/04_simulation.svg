@@ -1,0 +1,16 @@
+<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="150" cy="238" rx="100" ry="12" fill="#1C1F33" opacity="0.06"/>
+  <!-- phone/game frame -->
+  <rect x="90" y="46" width="120" height="180" rx="18" fill="#12183B"/>
+  <rect x="98" y="62" width="104" height="132" rx="6" fill="#FBF3E7"/>
+  <!-- mini chart inside -->
+  <polyline points="106,150 122,130 138,142 154,110 170,120 186,96 196,104" fill="none" stroke="#14B87F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="196" cy="104" r="4" fill="#14B87F"/>
+  <!-- fake buttons -->
+  <rect x="106" y="168" width="38" height="16" rx="8" fill="#14B87F"/>
+  <rect x="156" y="168" width="38" height="16" rx="8" fill="#FF6B4A"/>
+  <!-- badge / XP coin -->
+  <circle cx="228" cy="196" r="24" fill="#F2B705"/>
+  <ellipse cx="222" cy="188" rx="6" ry="9" fill="#FBF3E7" opacity="0.55"/>
+  <text x="228" y="202" text-anchor="middle" font-family="Baloo 2" font-weight="700" font-size="14" fill="#12183B">XP</text>
+</svg>

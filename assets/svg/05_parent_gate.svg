@@ -1,0 +1,13 @@
+<svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="150" cy="220" rx="95" ry="12" fill="#1C1F33" opacity="0.06"/>
+  <!-- two figures, parent + kid, holding a shell -->
+  <circle cx="108" cy="120" r="34" fill="#12183B"/>
+  <circle cx="108" cy="108" r="16" fill="#FBF3E7"/>
+  <rect x="80" y="150" width="56" height="50" rx="16" fill="#12183B"/>
+  <circle cx="196" cy="132" r="26" fill="#14B87F"/>
+  <circle cx="196" cy="122" r="12" fill="#FBF3E7"/>
+  <rect x="174" y="156" width="44" height="40" rx="14" fill="#14B87F"/>
+  <!-- shell between them -->
+  <ellipse cx="150" cy="150" rx="14" ry="18" fill="#F2B705"/>
+  <line x1="150" y1="136" x2="150" y2="150" stroke="#1C1F33" stroke-width="2" opacity="0.4"/>
+</svg>

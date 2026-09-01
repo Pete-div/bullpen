@@ -1,0 +1,25 @@
+<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="150" cy="238" rx="100" ry="12" fill="#1C1F33" opacity="0.06"/>
+  <!-- small shop -->
+  <rect x="60" y="168" width="66" height="60" rx="4" fill="#12183B"/>
+  <path d="M55 168 L93 138 L131 168 Z" fill="#FF6B4A"/>
+  <rect x="80" y="196" width="24" height="32" fill="#FBF3E7"/>
+  <!-- arrow -->
+  <path d="M138 178 C160 178 160 178 178 178" stroke="#0C8F62" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 10"/>
+  <path d="M170 168 L182 178 L170 188" stroke="#0C8F62" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- tower of buildings growing -->
+  <rect x="196" y="188" width="46" height="40" rx="4" fill="#12183B"/>
+  <rect x="200" y="150" width="38" height="40" rx="4" fill="#14B87F"/>
+  <rect x="204" y="118" width="30" height="34" rx="4" fill="#F2B705"/>
+  <!-- windows -->
+  <rect x="204" y="196" width="8" height="8" fill="#FBF3E7"/>
+  <rect x="218" y="196" width="8" height="8" fill="#FBF3E7"/>
+  <rect x="208" y="160" width="7" height="7" fill="#FBF3E7"/>
+  <rect x="222" y="160" width="7" height="7" fill="#FBF3E7"/>
+  <!-- cowrie shells raining as "shares" -->
+  <g fill="#F2B705">
+    <ellipse cx="150" cy="60" rx="8" ry="10" transform="rotate(-15 150 60)"/>
+    <ellipse cx="175" cy="45" rx="7" ry="9" transform="rotate(10 175 45)"/>
+    <ellipse cx="122" cy="48" rx="7" ry="9" transform="rotate(20 122 48)"/>
+  </g>
+</svg>
