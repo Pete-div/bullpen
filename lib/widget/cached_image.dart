@@ -38,29 +38,34 @@ class CachedImage extends StatelessWidget {
         switch (state.extendedImageLoadState) {
           case LoadState.loading:
             return SizedBox(
-                width: width,
-                // fit: fit,
-                height: height,
-                child: placeholder ??
-                    BlurHash(
-                        hash: hash ??
-                            'LKO2?U%2Tw=w]~RBVZRi};RPxuwH' // 'L5H2EC=PM+yV0g-mq.wG9c010J}I' //??
-                        // 'LFF5ywmx_Lw\$pJ?GxHtOakS^RjX4'
-                        ));
+              width: width,
+              // fit: fit,
+              height: height,
+              child:
+                  placeholder ??
+                  BlurHash(
+                    hash:
+                        hash ??
+                        'LKO2?U%2Tw=w]~RBVZRi};RPxuwH', // 'L5H2EC=PM+yV0g-mq.wG9c010J}I' //??
+                    // 'LFF5ywmx_Lw\$pJ?GxHtOakS^RjX4'
+                  ),
+            );
           case LoadState.completed:
             return ExtendedRawImage(
-                image: state.extendedImageInfo?.image,
-                width: width,
-                fit: fit,
-                filterQuality: FilterQuality.high,
-                height: height);
+              image: state.extendedImageInfo?.image,
+              width: width,
+              fit: fit,
+              filterQuality: FilterQuality.high,
+              height: height,
+            );
           case LoadState.failed:
             return errorWidget ??
                 BlurHash(
-                    hash: hash ??
-                        'LKO2?U%2Tw=w]~RBVZRi};RPxuwH' //'L5H2EC=PM+yV0g-mq.wG9c010J}I' //??
-                    // 'LFF5ywmx_Lw\$pJ?GxHtOakS^RjX4'
-                    );
+                  hash:
+                      hash ??
+                      'LKO2?U%2Tw=w]~RBVZRi};RPxuwH', //'L5H2EC=PM+yV0g-mq.wG9c010J}I' //??
+                  // 'LFF5ywmx_Lw\$pJ?GxHtOakS^RjX4'
+                );
           //     GestureDetector(
           //       child: Stack(
           //         fit: StackFit.expand,

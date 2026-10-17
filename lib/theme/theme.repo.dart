@@ -1,4 +1,3 @@
-
 import 'package:bullpen/utils/shared_preferences.dart' as pref;
 import 'package:bullpen/_lib.dart';
 
@@ -21,17 +20,12 @@ class ThemeRepo {
 
         break;
     }
-    final result = await pref.save(
-      key: 'appTheme',
-      value: value.toString(),
-    );
+    final result = await pref.save(key: 'appTheme', value: value.toString());
     return result;
   }
 
   Future<ThemeMode> getTheme() async {
-    var result = await pref.getValue(
-      key: 'appTheme',
-    );
+    var result = await pref.getValue(key: 'appTheme');
     switch (result.toString()) {
       case '0':
         return ThemeMode.system;

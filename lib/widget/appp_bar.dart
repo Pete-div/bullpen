@@ -1,8 +1,7 @@
-
 import 'package:bullpen/_lib.dart';
 
 class NormalAppBar extends ConsumerWidget implements PreferredSizeWidget {
-  NormalAppBar({super.key, this.actionWidget, this.title,this.leading});
+  NormalAppBar({super.key, this.actionWidget, this.title, this.leading});
   final Widget? actionWidget;
   final Widget? title;
   final Widget? leading;
@@ -14,25 +13,25 @@ class NormalAppBar extends ConsumerWidget implements PreferredSizeWidget {
       backgroundColor: appTheme.scaffoldBackgroundColor,
       surfaceTintColor: Colors.transparent,
       leading:
-      leading??
-       GestureDetector(
-        onTap: () {
-          Future.microtask((){
-         Navigator.pop(context);
-          });
-        },
-        child: Padding(
-          padding: const EdgeInsets.only(left: 16.0, top: 0),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: SvgPicture.asset(
-              'assets/svg/arrow-left.svg',
+          leading ??
+          GestureDetector(
+            onTap: () {
+              Future.microtask(() {
+                Navigator.pop(context);
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(left: 16.0, top: 0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: SvgPicture.asset(
+                  'assets/svg/arrow-left.svg',
 
-              color: appTheme.isDark ? white : Color(0xFF181818),
+                  color: appTheme.isDark ? white : Color(0xFF181818),
+                ),
+              ),
             ),
           ),
-        ),
-      ),
       title: title,
       centerTitle: true,
       actions: [actionWidget ?? const SizedBox.shrink()],

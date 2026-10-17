@@ -1,6 +1,6 @@
 // text sizes shortened as ts from 1 to 6
 const ts1 = 24.0;
-const ts7=20.0;
+const ts7 = 20.0;
 const ts2 = 18.0;
 const ts3 = 16.0;
 const ts4 = 14.0;

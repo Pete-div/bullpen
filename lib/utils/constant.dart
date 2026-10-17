@@ -1,11 +1,10 @@
-
 import 'package:bullpen/_lib.dart';
 
 class Constant {
   static String assetImagePath = "assets/images/";
   static const String fontsFamily = "Posppin";
 
- static const String apiKey='7a9ba303cf232d3d804e282de179735f5';
+  static const String apiKey = '7a9ba303cf232d3d804e282de179735f5';
   static double getPercentSize(double total, double percent) {
     return (percent * total) / 100;
   }
@@ -14,7 +13,11 @@ class Constant {
     Navigator.of(context).pop();
   }
 
-  static void sendToNext(BuildContext context, String route, {Object? arguments}) {
+  static void sendToNext(
+    BuildContext context,
+    String route, {
+    Object? arguments,
+  }) {
     if (arguments != null) {
       Navigator.pushNamed(context, route, arguments: arguments);
     } else {

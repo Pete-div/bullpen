@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 
-
 class SuccessLottieWidget extends ConsumerStatefulWidget {
   const SuccessLottieWidget({super.key});
 
@@ -19,17 +18,17 @@ class _SuccessLottieWidgetState extends ConsumerState<SuccessLottieWidget>
     _controller = AnimationController(vsync: this);
     super.initState();
   }
-    @override
+
+  @override
   void dispose() {
     _controller.stop();
     _controller.dispose();
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
-  //  final appTheme = ref.watch(appThemeProvider);
+    //  final appTheme = ref.watch(appThemeProvider);
     return SizedBox(
       height: 80,
       child: Center(
@@ -41,7 +40,6 @@ class _SuccessLottieWidgetState extends ConsumerState<SuccessLottieWidget>
           controller: _controller,
           repeat: true,
           onLoaded: (composition) {
-     
             _controller
               ..duration = composition.duration
               ..repeat();
@@ -52,13 +50,11 @@ class _SuccessLottieWidgetState extends ConsumerState<SuccessLottieWidget>
   }
 }
 
-
 class ErrorLottieWidget extends ConsumerStatefulWidget {
   const ErrorLottieWidget({super.key});
 
   @override
-  ConsumerState<ErrorLottieWidget> createState() =>
-      _ErrorLottieWidgetState();
+  ConsumerState<ErrorLottieWidget> createState() => _ErrorLottieWidgetState();
 }
 
 class _ErrorLottieWidgetState extends ConsumerState<ErrorLottieWidget>
@@ -69,8 +65,8 @@ class _ErrorLottieWidgetState extends ConsumerState<ErrorLottieWidget>
     _controller = AnimationController(vsync: this);
     super.initState();
   }
-  
-    @override
+
+  @override
   void dispose() {
     _controller.stop();
     _controller.dispose();
@@ -79,9 +75,9 @@ class _ErrorLottieWidgetState extends ConsumerState<ErrorLottieWidget>
 
   @override
   Widget build(BuildContext context) {
- //   final appTheme = ref.watch(appThemeProvider);
+    //   final appTheme = ref.watch(appThemeProvider);
     return Padding(
-      padding: const EdgeInsets.only(top:16.0),
+      padding: const EdgeInsets.only(top: 16.0),
       child: SizedBox(
         height: 80,
         child: Center(
@@ -90,7 +86,6 @@ class _ErrorLottieWidgetState extends ConsumerState<ErrorLottieWidget>
             controller: _controller,
             repeat: true,
             onLoaded: (composition) {
-       
               _controller
                 ..duration = composition.duration
                 ..repeat();

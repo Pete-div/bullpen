@@ -1,4 +1,3 @@
-
 // import 'package:kid_investor/_lib.dart';
 
 // class SplashNewScreen extends ConsumerStatefulWidget {
@@ -22,8 +21,6 @@
 //   void dispose() {
 //     super.dispose();
 //   }
-  
-
 
 //   void delayBeforeDashboard() {
 //     Future.delayed(const Duration(seconds: 2), () {

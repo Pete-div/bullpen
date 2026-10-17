@@ -1,6 +1,4 @@
-
 import 'package:bullpen/_lib.dart';
-
 
 class AppBaseThemeValues {
   static Color get dottedColor => const Color(0xFFCCCCCC);
@@ -142,16 +140,16 @@ class ColorStyle {
   final Color? c900;
   final Color? c1000;
 
-  ColorStyle(
-      {this.c100,
-      this.c200,
-      this.c300,
-      this.c400,
-      this.c500,
-      this.c600,
-      this.c700,
-      this.c800,
-      this.c900,
-      this.c1000});
+  ColorStyle({
+    this.c100,
+    this.c200,
+    this.c300,
+    this.c400,
+    this.c500,
+    this.c600,
+    this.c700,
+    this.c800,
+    this.c900,
+    this.c1000,
+  });
 }
-

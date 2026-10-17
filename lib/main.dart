@@ -1,5 +1,3 @@
-
-
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
@@ -11,7 +9,6 @@ final getIt = GetIt.instance;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
 
   setUpLocator();
   SystemChrome.setPreferredOrientations([
@@ -67,9 +64,7 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-   
   }
-
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
@@ -95,23 +90,23 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
       primarySwatch: Colors.green,
       brightness: Brightness.light,
       fontFamily: 'DmSans',
-        
+
       visualDensity: VisualDensity.adaptivePlatformDensity,
-        textSelectionTheme: const TextSelectionThemeData(
-      cursorColor: Colors.black,              
-      selectionColor: Color(0x33000000),       
-      selectionHandleColor: Colors.black,  
-      
-    ),
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: Colors.black,
+        selectionColor: Color(0x33000000),
+        selectionHandleColor: Colors.black,
+      ),
     ),
     ThemeMode.dark: ThemeData(
       primarySwatch: Colors.green,
       brightness: Brightness.dark,
-textSelectionTheme: const TextSelectionThemeData(
-      cursorColor: Colors.black,
-      selectionColor: Color(0x33000000),
-      selectionHandleColor: Colors.black,
-    ),      visualDensity: VisualDensity.adaptivePlatformDensity,
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: Colors.black,
+        selectionColor: Color(0x33000000),
+        selectionHandleColor: Colors.black,
+      ),
+      visualDensity: VisualDensity.adaptivePlatformDensity,
       fontFamily: 'DmSans',
       scaffoldBackgroundColor: Colors.black,
     ),
@@ -125,15 +120,16 @@ textSelectionTheme: const TextSelectionThemeData(
         final appTheme = ref.watch(appThemeProvider);
         return AnnotatedRegion(
           value: SystemUiOverlayStyle(
-            statusBarBrightness:
-                appTheme.isDark ? Brightness.dark : Brightness.light,
-            statusBarIconBrightness:
-                appTheme.isDark ? Brightness.dark : Brightness.light,
+            statusBarBrightness: appTheme.isDark
+                ? Brightness.dark
+                : Brightness.light,
+            statusBarIconBrightness: appTheme.isDark
+                ? Brightness.dark
+                : Brightness.light,
             statusBarColor: appTheme.isDark ? Colors.white : Colors.black,
           ),
           child: OverlaySupport.global(
             child: MaterialApp(
-              
               navigatorKey: navigatorKey,
               theme: appThemes[ThemeMode.light],
               darkTheme: appThemes[ThemeMode.dark],

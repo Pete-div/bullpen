@@ -37,16 +37,18 @@ class KidText extends ConsumerWidget {
       maxLines: maxLines,
       textAlign: textAlign,
       overflow: maxLines != null ? TextOverflow.ellipsis : null,
-      style:style?? TextStyle(
-        fontWeight: weight ?? FontWeight.w400,
-        fontSize: size,
-        letterSpacing: size * -0.03,
-        color: color,
-        fontFamily: Constant.fontsFamily,
-        fontStyle: fontStyle ?? FontStyle.normal,
-        //  color: color ?? AppColors.black,
-        decoration: decoration,
-      ),
+      style:
+          style ??
+          TextStyle(
+            fontWeight: weight ?? FontWeight.w400,
+            fontSize: size,
+            letterSpacing: size * -0.03,
+            color: color,
+            fontFamily: Constant.fontsFamily,
+            fontStyle: fontStyle ?? FontStyle.normal,
+            //  color: color ?? AppColors.black,
+            decoration: decoration,
+          ),
     );
   }
 }

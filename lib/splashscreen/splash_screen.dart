@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
   late final Animation<double> _mascotBob;
   late final Animation<double> _logoFade;
   late final Animation<Offset> _logoSlide;
-   late final Animation<double> _textFade;   
+  late final Animation<double> _textFade;
   late final Animation<Offset> _textSlide;
 
   @override
@@ -29,8 +29,8 @@ class _SplashScreenState extends State<SplashScreen>
     _textController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 550),
-    );   
-     _mascotController = AnimationController(
+    );
+    _mascotController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 900),
     );
@@ -38,16 +38,11 @@ class _SplashScreenState extends State<SplashScreen>
       parent: _mascotController,
       curve: const Interval(0.0, 0.65, curve: Curves.elasticOut),
     );
-        _textFade = CurvedAnimation(
-      parent: _textController,
-      curve: Curves.easeOut,
-    );
-    _textSlide = Tween<Offset>(
-      begin: const Offset(0.4, 0), 
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(parent: _textController, curve: Curves.easeOutCubic),
-    );
+    _textFade = CurvedAnimation(parent: _textController, curve: Curves.easeOut);
+    _textSlide = Tween<Offset>(begin: const Offset(0.4, 0), end: Offset.zero)
+        .animate(
+          CurvedAnimation(parent: _textController, curve: Curves.easeOutCubic),
+        );
     _mascotBob = Tween<double>(begin: -32, end: 4).animate(
       CurvedAnimation(
         parent: _mascotController,
@@ -70,9 +65,9 @@ class _SplashScreenState extends State<SplashScreen>
       if (mounted) _logoController.forward();
     });
 
-Future.delayed(const Duration(milliseconds: 1100), () {
-  if (mounted) _textController.forward();
-});
+    Future.delayed(const Duration(milliseconds: 1100), () {
+      if (mounted) _textController.forward();
+    });
     Future.delayed(const Duration(milliseconds: 900), () {
       if (mounted) _mascotController.repeat(reverse: true, min: 0.65, max: 1.0);
     });
@@ -98,7 +93,7 @@ Future.delayed(const Duration(milliseconds: 1100), () {
   void dispose() {
     _mascotController.dispose();
     _logoController.dispose();
-        _textController.dispose(); // NEW
+    _textController.dispose(); // NEW
 
     super.dispose();
   }
@@ -167,11 +162,11 @@ Future.delayed(const Duration(milliseconds: 1100), () {
                   ],
                 ),
                 SlideTransition(
-                    position: _textSlide,
+                  position: _textSlide,
 
                   child: FadeTransition(
-                        opacity: _textFade,
-                  
+                    opacity: _textFade,
+
                     child: Text.rich(
                       TextSpan(
                         text: 'LEARN',

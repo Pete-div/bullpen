@@ -1,7 +1,12 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+
 class AnimatedBranchContainer extends StatelessWidget {
-  const AnimatedBranchContainer({required this.currentIndex, required this.children, super.key});
+  const AnimatedBranchContainer({
+    required this.currentIndex,
+    required this.children,
+    super.key,
+  });
 
   static const _defaultAnimationDuration = Duration(milliseconds: 250);
 
@@ -11,14 +16,13 @@ class AnimatedBranchContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children:
-          children.mapIndexed((int index, Widget navigator) {
-            return AnimatedOpacity(
-              opacity: index == currentIndex ? 1 : 0,
-              duration: _defaultAnimationDuration,
-              child: _branchNavigatorWrapper(index, navigator),
-            );
-          }).toList(),
+      children: children.mapIndexed((int index, Widget navigator) {
+        return AnimatedOpacity(
+          opacity: index == currentIndex ? 1 : 0,
+          duration: _defaultAnimationDuration,
+          child: _branchNavigatorWrapper(index, navigator),
+        );
+      }).toList(),
     );
   }
 

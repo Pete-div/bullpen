@@ -1,5 +1,3 @@
-
-
 import 'package:bullpen/_lib.dart';
 
 class SizeConfig {
@@ -28,10 +26,12 @@ class SizeConfig {
   static double? _bottomBarHeight;
   static double? _textScaleFactor;
 
-  static void init(BuildContext context,
-      {num width = defaultWidth,
-      num height = defaultHeight,
-      bool allowFontScaling = false}) {
+  static void init(
+    BuildContext context, {
+    num width = defaultWidth,
+    num height = defaultHeight,
+    bool allowFontScaling = false,
+  }) {
     _instance ??= SizeConfig._();
     _instance!.uiWidthPx = width;
     _instance!.uiHeightPx = height;
@@ -94,13 +94,12 @@ class SizeConfig {
   ///Font size adaptation method
   ///@param [fontSize] The size of the font on the UI design, in px.
   ///@param [allowFontScaling]
-  num sp(num fontSize,
-          {bool? allowFontScalingSelf}) =>
+  num sp(num fontSize, {bool? allowFontScalingSelf}) =>
       allowFontScalingSelf == null
-          ? (allowFontScaling
-              ? (fontSize * scaleText)
-              : ((fontSize * scaleText) / _textScaleFactor!))
-          : (allowFontScalingSelf
-              ? (fontSize * scaleText)
-              : ((fontSize * scaleText) / _textScaleFactor!));
+      ? (allowFontScaling
+            ? (fontSize * scaleText)
+            : ((fontSize * scaleText) / _textScaleFactor!))
+      : (allowFontScalingSelf
+            ? (fontSize * scaleText)
+            : ((fontSize * scaleText) / _textScaleFactor!));
 }

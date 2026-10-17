@@ -63,11 +63,13 @@ class ContainerWidget extends StatelessWidget {
             width: width,
             constraints: constraints,
             alignment: alignment,
-            decoration: decoration ??
+            decoration:
+                decoration ??
                 BoxDecoration(
                   border: hasBorder
                       ? Border.all(
-                          color: borderColor ??
+                          color:
+                              borderColor ??
                               Theme.of(context).colorScheme.surface,
                           width: borderThickness ?? 0.5,
                         )

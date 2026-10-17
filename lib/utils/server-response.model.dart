@@ -1,4 +1,3 @@
-
 class ServerResponse {
   final Object? data;
   final String msg;
@@ -13,22 +12,17 @@ class ServerResponse {
   });
 
   factory ServerResponse.fromJson(Map<String, dynamic> json) {
-   final status = json['status']?.toString().trim().toLowerCase();
+    final status = json['status']?.toString().trim().toLowerCase();
 
-  final successKeywords = [
-    'success',   
-    'aṣeyọri',  
-    'éxito',    
-    'succès',   
-  ];
-  
-  
-final isSuccess = json['success'] == true ||
-    (status != null && successKeywords.any((kw) => status.contains(kw)));
+    final successKeywords = ['success', 'aṣeyọri', 'éxito', 'succès'];
+
+    final isSuccess =
+        json['success'] == true ||
+        (status != null && successKeywords.any((kw) => status.contains(kw)));
 
     return ServerResponse(
       data: json.containsKey('data') ? json['data'] : null,
-    success: isSuccess,
+      success: isSuccess,
       msg: json['msg']?.toString() ?? json['message']?.toString() ?? '',
       code: json['code'] is int ? json['code'] : null,
     );
@@ -56,7 +50,6 @@ class VerificationResponse {
 
   bool get isSuccess => status.toLowerCase() == 'success';
 }
-
 
 class ServerDataArrayResponse {
   final List data;

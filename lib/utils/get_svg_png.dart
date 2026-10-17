@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class GetSvgImage extends StatelessWidget {
-  const GetSvgImage(
-      {super.key,
-      required this.image,
-      this.boxFit = BoxFit.contain,
-      this.color,
-      this.width,
-      this.height});
+  const GetSvgImage({
+    super.key,
+    required this.image,
+    this.boxFit = BoxFit.contain,
+    this.color,
+    this.width,
+    this.height,
+  });
 
   final double? width;
   final Color? color;
@@ -20,8 +21,9 @@ class GetSvgImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       image,
-      colorFilter:
-          color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
+      colorFilter: color != null
+          ? ColorFilter.mode(color!, BlendMode.srcIn)
+          : null,
       width: width,
       height: height,
       fit: boxFit,
@@ -30,13 +32,14 @@ class GetSvgImage extends StatelessWidget {
 }
 
 class GetPngImage extends StatelessWidget {
-  const GetPngImage(
-      {super.key,
-      required this.image,
-      this.boxFit = BoxFit.contain,
-      this.color,
-      this.width,
-      this.height});
+  const GetPngImage({
+    super.key,
+    required this.image,
+    this.boxFit = BoxFit.contain,
+    this.color,
+    this.width,
+    this.height,
+  });
 
   final double? width;
   final Color? color;

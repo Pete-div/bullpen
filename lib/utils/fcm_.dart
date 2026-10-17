@@ -7,7 +7,6 @@
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-
 // class FirebaseGeneralMessenger {
 //   final FirebaseMessaging _generalFirebaseMessaging = FirebaseMessaging.instance;
 //   static final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
@@ -46,7 +45,7 @@
 
 //   Future<void> firebaseInit(WidgetRef ref) async {
 //     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
-//         FirebaseGeneralMessenger().initializeLocalNotification( ref); 
+//         FirebaseGeneralMessenger().initializeLocalNotification( ref);
 
 //       if (message.notification != null) {
 //         await showMessage(message);
@@ -83,27 +82,22 @@
 //         }
 //       });
 
-
 //       FirebaseApiService().handleMessage(formattedMessage, ref);
 //     } catch (e) {
 //     }
 //   }
 // }
 
-
-
-
 //   );
 // }
 
-
 //   Future<void> showMessage(RemoteMessage message) async {
 //     const AndroidNotificationChannel channel = AndroidNotificationChannel(
-//       'high_importance_channel', 
+//       'high_importance_channel',
 //       'High Importance Notifications',
 //       importance: Importance.max,
 //     description: 'Channel for important notifications',
-//     playSound: true,  
+//     playSound: true,
 //     );
 
 //     final androidDetails = AndroidNotificationDetails(
@@ -124,7 +118,7 @@
 
 //     final notificationDetails =
 //         NotificationDetails(android: androidDetails, iOS: iOSDetails);
-//   int notificationId = DateTime.now().millisecondsSinceEpoch ~/ 1000; 
+//   int notificationId = DateTime.now().millisecondsSinceEpoch ~/ 1000;
 
 //     await _flutterLocalNotificationsPlugin.show(
 //       notificationId,
@@ -135,10 +129,10 @@
 //       "notification_type": message.data['notification_type'],
 //       "data_id": message.data['data_id'],
 //       "extra_field": message.data['extra_field'],
-//     }), 
+//     }),
 //       //jsonEncode(message.data),
 //     );
-    
+
 //   }
 //  }
 
@@ -161,11 +155,10 @@
 //     return;
 //   }
 
-
 //   switch (notificationType) {
 //     case 'chat':
 //       Future.microtask(() {
-       
+
 //       });
 //       break;
 
@@ -174,7 +167,7 @@
 //       });
 //       break;
 
-//     case 'post': 
+//     case 'post':
 //       Future.microtask(() {
 //       });
 //     case 'comment':
@@ -188,7 +181,7 @@
 //       Future.microtask(() {
 //       });
 //       break;
-      
+
 //          case 'recommendation':
 //       Future.microtask(() {
 //    });
@@ -199,14 +192,13 @@
 //       break;
 //     case 'group':
 //       Future.microtask(() {
-        
+
 //       });
 //       break;
 
 //     default:
 //   }
 // }
-
 
 //   Future<void> initLocalNotifications(WidgetRef ref) async {
 //     const settings = InitializationSettings(

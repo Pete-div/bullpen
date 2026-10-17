@@ -240,10 +240,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                           onTap: () {
                             if (index == onboardingPageData.length - 1) {
                               // Parent flow
-                              Constant.sendToNext(
-                                context,
-                                Routes.intentRoute,
-                              );
+                              Constant.sendToNext(context, Routes.intentRoute);
                             } else {
                               goToPage(index + 1);
                             }
@@ -264,12 +261,10 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   String _buttonText() {
     if (index == onboardingPageData.length - 1) {
       return 'Continue';
-
     }
 
     if (index == 0) {
       return "Let's start";
-
     }
 
     return 'Next';

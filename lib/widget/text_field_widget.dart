@@ -1,4 +1,3 @@
-
 import 'package:bullpen/_lib.dart';
 
 class CustomTextFieldWidget extends ConsumerWidget {
@@ -118,7 +117,7 @@ class CustomTextFieldWidget extends ConsumerWidget {
         prefixIcon: prefixIcon,
         labelText: labelText,
         labelStyle: labelStyle ?? Theme.of(context).textTheme.bodyMedium,
-        
+
         prefixIconColor:
             prefixIconColor ?? Theme.of(context).colorScheme.primary,
         hintText: hintText,

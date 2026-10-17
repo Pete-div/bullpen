@@ -120,120 +120,121 @@ class _IntentScreenState extends State<IntentScreen>
     super.dispose();
   }
 
-
-
-String _successMessage(String experience) {
-  switch (experience) {
-    case 'I already trade or invest':
-      return "We'll skip the basics and drop you straight into advanced tools, deeper charts, and market data.";
-    case 'I know the basics':
-      return "We'll sharpen what you already know with real scenarios and a few new concepts along the way.";
-    default:
-      return "No pressure — we'll walk you through everything step by step, starting with the fundamentals.";
+  String _successMessage(String experience) {
+    switch (experience) {
+      case 'I already trade or invest':
+        return "We'll skip the basics and drop you straight into advanced tools, deeper charts, and market data.";
+      case 'I know the basics':
+        return "We'll sharpen what you already know with real scenarios and a few new concepts along the way.";
+      default:
+        return "No pressure — we'll walk you through everything step by step, starting with the fundamentals.";
+    }
   }
-}
- 
-Widget _resolveDestination(String experience) {
-  switch (experience) {
-    case 'I already trade or invest':
-      return SizedBox.shrink();
-      
+
+  Widget _resolveDestination(String experience) {
+    switch (experience) {
+      case 'I already trade or invest':
+        return SizedBox.shrink();
+
       //const IntermediateDashboard();
-    case 'I know the basics':
-      return  SizedBox.shrink();
+      case 'I know the basics':
+        return SizedBox.shrink();
       //const StandardDashboard();
-    default:
-      return  SizedBox.shrink();
-      
+      default:
+        return SizedBox.shrink();
+
       //const BeginnerTrackIntro();
+    }
   }
-}
-String _successTitle(String experience) {
-  switch (experience) {
-    case 'I already trade or invest':
-      return "You're all set, Pro!";
-    case 'I know the basics':
-      return "Great, let's build on that!";
-    default:
-      return "Perfect, we'll start from zero!";
+
+  String _successTitle(String experience) {
+    switch (experience) {
+      case 'I already trade or invest':
+        return "You're all set, Pro!";
+      case 'I know the basics':
+        return "Great, let's build on that!";
+      default:
+        return "Perfect, we'll start from zero!";
+    }
   }
-}
- 
-void _routeUser() {
-  final intent = _answers[0];
-  final experience = _answers[1];
- 
-  final destination = _resolveDestination(experience);
- 
-  showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,
-    isDismissible: false, 
-    enableDrag: false,
-    backgroundColor: Colors.transparent,
-    transitionAnimationController: _bottomSheetController,
-    builder: (sheetContext) {
-      // Auto-close the sheet after a few seconds
-      Future.delayed(const Duration(seconds: 3), () {
-        if (sheetContext.mounted) {
-          Navigator.of(sheetContext).pop();
-        }
-      });
- 
-      return TweenAnimationBuilder<double>(
-        duration: const Duration(milliseconds: 500),
-        tween: Tween(begin: 40.0, end: 0.0),
-        builder: (context, value, child) {
-          return Transform.translate(offset: Offset(0, value), child: child);
-        },
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-          decoration: BoxDecoration(
-            color: AppColors.cream,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-          ),
-          child: SafeArea(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SuccessLottieWidget(),
-                const YMargin(20),
-                KidText(
-                  _successTitle(experience),
-                  textAlign: TextAlign.center,
-                  style: baloo.bodySmall?.copyWith(
-                    color: AppColors.dark,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 20,
+
+  void _routeUser() {
+    final intent = _answers[0];
+    final experience = _answers[1];
+
+    final destination = _resolveDestination(experience);
+
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      isDismissible: false,
+      enableDrag: false,
+      backgroundColor: Colors.transparent,
+      transitionAnimationController: _bottomSheetController,
+      builder: (sheetContext) {
+        // Auto-close the sheet after a few seconds
+        Future.delayed(const Duration(seconds: 3), () {
+          if (sheetContext.mounted) {
+            Navigator.of(sheetContext).pop();
+          }
+        });
+
+        return TweenAnimationBuilder<double>(
+          duration: const Duration(milliseconds: 500),
+          tween: Tween(begin: 40.0, end: 0.0),
+          builder: (context, value, child) {
+            return Transform.translate(offset: Offset(0, value), child: child);
+          },
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+            decoration: BoxDecoration(
+              color: AppColors.cream,
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(24),
+              ),
+            ),
+            child: SafeArea(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SuccessLottieWidget(),
+                  const YMargin(20),
+                  KidText(
+                    _successTitle(experience),
+                    textAlign: TextAlign.center,
+                    style: baloo.bodySmall?.copyWith(
+                      color: AppColors.dark,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-                const YMargin(10),
-                KidText(
-                  _successMessage(experience),
-                  textAlign: TextAlign.center,
-                  style: manrope.bodySmall?.copyWith(
-                    color: AppColors.dark.withOpacity(0.6),
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14.5,
-                    height: 1.4,
+                  const YMargin(10),
+                  KidText(
+                    _successMessage(experience),
+                    textAlign: TextAlign.center,
+                    style: manrope.bodySmall?.copyWith(
+                      color: AppColors.dark.withOpacity(0.6),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14.5,
+                      height: 1.4,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
+        );
+      },
+    ).then((_) {
+      // Runs once the sheet has fully closed (either by timer or manual dismiss)
+      if (!mounted) return;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => destination),
       );
-    },
-  ).then((_) {
-    // Runs once the sheet has fully closed (either by timer or manual dismiss)
-    if (!mounted) return;
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (_) => destination),
-    );
-  });
-}
+    });
+  }
 
   Widget _buildProgressBar() {
     return Row(

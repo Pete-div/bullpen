@@ -7,5 +7,3 @@ export 'x_margin.dart';
 export 'y_margin.dart';
 export 'locator.dart';
 export 'success_lottie.dart';
-
-

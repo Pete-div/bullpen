@@ -1,9 +1,6 @@
 import 'package:bullpen/_lib.dart';
 
-
-
-final appThemeModeProvider =
-    NotifierProvider<AppThemeModeNotifier, ThemeMode>(
+final appThemeModeProvider = NotifierProvider<AppThemeModeNotifier, ThemeMode>(
   AppThemeModeNotifier.new,
 );
 
@@ -34,9 +31,7 @@ class AppThemeModeNotifier extends Notifier<ThemeMode>
   Future<void> update(ThemeMode newMode) async {
     state = newMode;
 
-    await themeRepo.setThemeMode(
-      mode: newMode,
-    );
+    await themeRepo.setThemeMode(mode: newMode);
 
     _updateStatusBar();
   }
@@ -59,10 +54,7 @@ class AppThemeModeNotifier extends Notifier<ThemeMode>
       return Brightness.dark;
     }
 
-    return WidgetsBinding
-        .instance
-        .platformDispatcher
-        .platformBrightness;
+    return WidgetsBinding.instance.platformDispatcher.platformBrightness;
   }
 
   BaseTheme get currentTheme {
@@ -90,15 +82,13 @@ class AppThemeModeNotifier extends Notifier<ThemeMode>
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: theme.scaffoldBackgroundColor,
-        statusBarIconBrightness:
-            theme.brightness == Brightness.dark
-                ? Brightness.light
-                : Brightness.dark,
+        statusBarIconBrightness: theme.brightness == Brightness.dark
+            ? Brightness.light
+            : Brightness.dark,
         systemNavigationBarColor: theme.scaffoldBackgroundColor,
-        systemNavigationBarIconBrightness:
-            theme.brightness == Brightness.dark
-                ? Brightness.light
-                : Brightness.dark,
+        systemNavigationBarIconBrightness: theme.brightness == Brightness.dark
+            ? Brightness.light
+            : Brightness.dark,
       ),
     );
   }
@@ -145,15 +135,13 @@ void _updateStatusBar(BaseTheme theme) {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: theme.scaffoldBackgroundColor,
-      statusBarIconBrightness:
-          theme.brightness == Brightness.dark
-              ? Brightness.light
-              : Brightness.dark,
+      statusBarIconBrightness: theme.brightness == Brightness.dark
+          ? Brightness.light
+          : Brightness.dark,
       systemNavigationBarColor: theme.scaffoldBackgroundColor,
-      systemNavigationBarIconBrightness:
-          theme.brightness == Brightness.dark
-              ? Brightness.light
-              : Brightness.dark,
+      systemNavigationBarIconBrightness: theme.brightness == Brightness.dark
+          ? Brightness.light
+          : Brightness.dark,
     ),
   );
 }
