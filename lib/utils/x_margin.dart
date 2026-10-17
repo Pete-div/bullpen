@@ -1,6 +1,5 @@
 import 'package:bullpen/_lib.dart';
 
-
 class XMargin extends StatelessWidget {
   const XMargin(this.width, {super.key});
 

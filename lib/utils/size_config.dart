@@ -44,7 +44,8 @@ class SizeConfig {
     _screenHeight = mediaQuery.size.height;
     _statusBarHeight = mediaQuery.padding.top;
     _bottomBarHeight = _mediaQueryData!.padding.bottom;
-_textScaleFactor = mediaQuery.textScaler.scale(1.0);  }
+    _textScaleFactor = mediaQuery.textScaler.scale(1.0);
+  }
 
   static MediaQueryData? get mediaQueryData => _mediaQueryData;
 

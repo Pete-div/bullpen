@@ -266,9 +266,7 @@ class _IntentScreenState extends State<IntentScreen>
         duration: const Duration(milliseconds: 180),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 22),
         decoration: BoxDecoration(
-          color: isSelected
-              ? app_color.greenDeep.withAlpha(8)
-              : Colors.white,
+          color: isSelected ? app_color.greenDeep.withAlpha(8) : Colors.white,
           borderRadius: BorderRadius.circular(18),
           border: Border.all(
             color: isSelected
@@ -369,9 +367,7 @@ class _IntentScreenState extends State<IntentScreen>
                   onPressed: _selected == null ? null : _handleContinue,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: app_color.greenDeep,
-                    disabledBackgroundColor: app_color.greenDeep.withAlpha(
-                      35,
-                    ),
+                    disabledBackgroundColor: app_color.greenDeep.withAlpha(35),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18),

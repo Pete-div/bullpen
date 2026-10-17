@@ -1,8 +1,6 @@
-
 import 'package:bullpen/_lib.dart';
 
 class CommonButton extends StatelessWidget {
-  
   final String text;
   final void Function() onPressed;
   final double? width;
@@ -18,7 +16,7 @@ class CommonButton extends StatelessWidget {
   final Color? textColor;
 
   const CommonButton({
-      super.key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.width,

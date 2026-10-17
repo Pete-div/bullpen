@@ -12,7 +12,7 @@ class CachedImage extends StatelessWidget {
   final Alignment? alignment;
   final String? hash;
   const CachedImage({
-     super.key,
+    super.key,
     required this.url,
     this.height = 60,
     this.width = 60,

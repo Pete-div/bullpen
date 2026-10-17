@@ -36,7 +36,7 @@ class CustomTextFieldWidget extends ConsumerWidget {
   final InputBorder? focusBorder;
 
   const CustomTextFieldWidget({
-     super.key,
+    super.key,
     this.textInputAction,
     this.focusNode,
     required this.controller,

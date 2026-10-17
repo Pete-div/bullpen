@@ -1,7 +1,7 @@
 import 'package:bullpen/_lib.dart';
 
 class YMargin extends StatelessWidget {
-    const YMargin(this.height, {super.key});
+  const YMargin(this.height, {super.key});
   final double height;
 
   @override

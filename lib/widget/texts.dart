@@ -15,7 +15,7 @@ class KidText extends ConsumerWidget {
 
   const KidText(
     this.text, {
-      super.key,
+    super.key,
     this.weight,
     this.size = 14,
     this.color,
@@ -67,8 +67,8 @@ class JikooNaira extends ConsumerWidget {
 
   const JikooNaira(
     this.text, {
-  super.key,
-      this.weight,
+    super.key,
+    this.weight,
     this.size = 14,
     this.color,
     this.textAlign,
