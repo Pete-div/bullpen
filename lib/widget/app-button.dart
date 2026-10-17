@@ -38,7 +38,7 @@ class AppButton extends ConsumerWidget {
     final Color backgroundColor = isEnabled
         ? (enabledBtnColor ?? (appTheme.isDark ? grayColor : primaryColor))
         : (disabledBtnColor ??
-              (appTheme.isDark ? grayColor : primaryColor.withOpacity(0.5)));
+              (appTheme.isDark ? grayColor : primaryColor.withAlpha(5)));
 
     final Color borderColor = isEnabled
         ? (enabledBtnColor ??

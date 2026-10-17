@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({
-    Key? key,
+     super.key,
     this.onTap,
     this.child,
     this.height,
@@ -21,7 +21,7 @@ class ContainerWidget extends StatelessWidget {
     this.alignment,
     this.animatingDuration = const Duration(milliseconds: 500),
     this.elevation = 0.0,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onTap;
   final Widget? child;

@@ -1,5 +1,6 @@
-import 'package:bullpen/theme/color_data.dart' as AppColors;
-import 'package:google_fonts/google_fonts.dart';
+// ignore_for_file: unused_field
+
+import 'package:bullpen/theme/color_data.dart' as app_color;
 
 import '../_lib.dart';
 
@@ -144,7 +145,7 @@ class _SplashScreenState extends State<SplashScreen>
                     KidText(
                       'Bull',
                       style: baloo.bodySmall?.copyWith(
-                        color: AppColors.dark,
+                        color: app_color.dark,
                         fontWeight: FontWeight.w700,
                         fontSize: 40,
                         letterSpacing: 2,
@@ -153,7 +154,7 @@ class _SplashScreenState extends State<SplashScreen>
                     KidText(
                       'Pen',
                       style: baloo.bodySmall?.copyWith(
-                        color: AppColors.primaryColor,
+                        color: app_color.primaryColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 40,
                         letterSpacing: 2,
@@ -171,7 +172,7 @@ class _SplashScreenState extends State<SplashScreen>
                       TextSpan(
                         text: 'LEARN',
                         style: baloo.bodySmall?.copyWith(
-                          color: AppColors.primaryColor,
+                          color: app_color.primaryColor,
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
                           letterSpacing: 2,
@@ -185,7 +186,7 @@ class _SplashScreenState extends State<SplashScreen>
                                     children: [TextSpan()],
                                     text: ' into the Game',
                                     style: baloo.bodySmall?.copyWith(
-                                      color: AppColors.dark,
+                                      color: app_color.dark,
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
                                       letterSpacing: 2,
@@ -194,7 +195,7 @@ class _SplashScreenState extends State<SplashScreen>
                                 ],
                                 text: 'GROW',
                                 style: baloo.bodySmall?.copyWith(
-                                  color: AppColors.primaryColor,
+                                  color: app_color.primaryColor,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 14,
                                   letterSpacing: 2,
@@ -203,7 +204,7 @@ class _SplashScreenState extends State<SplashScreen>
                             ],
                             text: ' the Game, ',
                             style: baloo.bodySmall?.copyWith(
-                              color: AppColors.dark,
+                              color: app_color.dark,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
                               letterSpacing: 2,

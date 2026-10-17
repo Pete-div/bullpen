@@ -36,7 +36,7 @@ class CustomTextFieldWidget extends ConsumerWidget {
   final InputBorder? focusBorder;
 
   const CustomTextFieldWidget({
-    Key? key,
+     super.key,
     this.textInputAction,
     this.focusNode,
     required this.controller,
@@ -70,7 +70,7 @@ class CustomTextFieldWidget extends ConsumerWidget {
     this.enabled,
     this.style,
     this.textInputFormatters,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context, ref) {
@@ -109,7 +109,7 @@ class CustomTextFieldWidget extends ConsumerWidget {
           vertical: 5.0,
           horizontal: 8.0,
         ),
-        fillColor: backgroundColor ?? Color(0xFFD5D5D5).withOpacity(0.5),
+        fillColor: backgroundColor ?? Color(0xFFD5D5D5).withAlpha(5),
         suffixIcon: suffixIcon,
 
         suffixIconColor:
@@ -130,7 +130,7 @@ class CustomTextFieldWidget extends ConsumerWidget {
               fontSize: 13,
             ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: mildGrey.withOpacity(0.3), width: 1),
+          borderSide: BorderSide(color: mildGrey.withAlpha(3), width: 1),
           borderRadius: borderRadius ?? BorderRadius.circular(10),
         ),
         errorStyle: TextStyle(
@@ -143,7 +143,7 @@ class CustomTextFieldWidget extends ConsumerWidget {
             enableBord ??
             OutlineInputBorder(
               borderSide: BorderSide(
-                color: mildGrey.withOpacity(0.3),
+                color: mildGrey.withAlpha(3),
                 width: controller.text.isNotEmpty ? 1 : 1,
               ),
               borderRadius: borderRadius ?? BorderRadius.circular(10),

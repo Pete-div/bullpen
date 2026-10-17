@@ -1,9 +1,10 @@
 import 'package:bullpen/_lib.dart';
 
-class XMargin extends StatelessWidget {
-  final double width;
 
-  const XMargin(this.width);
+class XMargin extends StatelessWidget {
+  const XMargin(this.width, {super.key});
+
+  final double width;
 
   @override
   Widget build(BuildContext context) {

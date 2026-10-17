@@ -15,9 +15,9 @@ Color grey400 = "#777D86".toColor();
 Color grey650 = "#475367".toColor();
 Color grey800 = "#1D2739".toColor();
 Color successLightColor = "#EFFEF0".toColor();
-Color successColor = blueColor.withOpacity(0.10);
+Color successColor = blueColor.withAlpha(10);
 Color switchColor = "#18CF2D".toColor();
-Color shadowColor = blueColor.withOpacity(0.10);
+Color shadowColor = blueColor.withAlpha(10);
 Color skipColor = "#6E768A".toColor();
 Color errorColor = "#DD524D".toColor();
 Color borderColor = "#F5B546".toColor();
@@ -102,7 +102,7 @@ Color darkBoxColor = '#3A3A3F'.toColor();
 Color ligthBoxColor = '#FAFAFA'.toColor();
 
 extension ColorExtension on String {
-  toColor() {
+  dynamic toColor() {
     var hexColor = replaceAll("#", "");
     if (hexColor.length == 6) {
       hexColor = "FF$hexColor";

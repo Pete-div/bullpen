@@ -15,7 +15,7 @@ class KidText extends ConsumerWidget {
 
   const KidText(
     this.text, {
-    Key? key,
+      super.key,
     this.weight,
     this.size = 14,
     this.color,
@@ -26,7 +26,7 @@ class KidText extends ConsumerWidget {
     this.style,
     this.height = 20,
     this.softWrap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context, ref) {
@@ -67,8 +67,8 @@ class JikooNaira extends ConsumerWidget {
 
   const JikooNaira(
     this.text, {
-    Key? key,
-    this.weight,
+  super.key,
+      this.weight,
     this.size = 14,
     this.color,
     this.textAlign,
@@ -77,7 +77,7 @@ class JikooNaira extends ConsumerWidget {
     this.fontStyle,
     this.height = 20,
     this.softWrap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context, ref) {

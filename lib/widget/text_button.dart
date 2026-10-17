@@ -1,8 +1,8 @@
-// ignore_for_file: deprecated_member_us, deprecated_member_use
 
 import 'package:bullpen/_lib.dart';
 
 class CommonButton extends StatelessWidget {
+  
   final String text;
   final void Function() onPressed;
   final double? width;
@@ -17,8 +17,8 @@ class CommonButton extends StatelessWidget {
   final Color? color;
   final Color? textColor;
 
-  // ignore: use_key_in_widget_constructors
   const CommonButton({
+      super.key,
     required this.text,
     required this.onPressed,
     this.width,
@@ -52,7 +52,6 @@ class CommonButton extends StatelessWidget {
           Text(
             text,
             textAlign: TextAlign.center,
-            textScaleFactor: 1.0,
             // style: const TextStyle(fontSize: 16, color: Colors.white),
             style: isFilled == true
                 ? TextStyle(
@@ -125,7 +124,6 @@ class CommonButton2 extends StatelessWidget {
             Text(
               text,
               textAlign: TextAlign.center,
-              textScaleFactor: 1.0,
               // style: const TextStyle(fontSize: 16, color: Colors.white),
               style: isFilled == true
                   ? TextStyle(

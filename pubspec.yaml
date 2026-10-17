@@ -48,6 +48,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   google_fonts: ^8.2.1
   lottie: ^3.5.1
+  collection: ^1.19.0
 
 dev_dependencies:
   flutter_test:

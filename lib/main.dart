@@ -42,8 +42,8 @@ class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key, this.initialLanguageCode = 'en'});
   final String initialLanguageCode;
 
-  static _MyAppState of(BuildContext context) =>
-      context.findAncestorStateOfType<_MyAppState>()!;
+static ConsumerState<MyApp> of(BuildContext context) =>
+    context.findAncestorStateOfType<_MyAppState>()!;
 
   @override
   ConsumerState<MyApp> createState() => _MyAppState();

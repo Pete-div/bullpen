@@ -67,7 +67,6 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final data = onboardingPageData[index];
 
     return Scaffold(
       backgroundColor: cream,
@@ -208,7 +207,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                           width: 52,
                           height: 52,
                           child: Material(
-                            color: text.withOpacity(0.06),
+                            color: text.withAlpha(6),
                             borderRadius: BorderRadius.circular(16),
                             child: InkWell(
                               borderRadius: BorderRadius.circular(16),
@@ -300,7 +299,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           width: isActive ? 22 : 9,
           height: 9,
           decoration: BoxDecoration(
-            color: isActive ? greenDeep : text.withOpacity(0.18),
+            color: isActive ? greenDeep : text.withAlpha(18),
             borderRadius: BorderRadius.circular(4.5),
           ),
         );
@@ -308,27 +307,27 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     );
   }
 
-  Widget _buildParentNote() {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 290),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-        decoration: BoxDecoration(
-          color: gateAmberBg,
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: gateAmberBorder),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SvgPicture.asset(
-              'assets/images/icon_info.svg',
-              width: 18,
-              height: 18,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  // Widget _buildParentNote() {
+  //   return ConstrainedBox(
+  //     constraints: const BoxConstraints(maxWidth: 290),
+  //     child: Container(
+  //       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+  //       decoration: BoxDecoration(
+  //         color: gateAmberBg,
+  //         borderRadius: BorderRadius.circular(14),
+  //         border: Border.all(color: gateAmberBorder),
+  //       ),
+  //       child: Row(
+  //         crossAxisAlignment: CrossAxisAlignment.start,
+  //         children: [
+  //           SvgPicture.asset(
+  //             'assets/images/icon_info.svg',
+  //             width: 18,
+  //             height: 18,
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 }

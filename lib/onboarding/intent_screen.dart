@@ -1,4 +1,4 @@
-import 'package:bullpen/theme/color_data.dart' as AppColors;
+import 'package:bullpen/theme/color_data.dart' as app_color;
 import '../_lib.dart';
 
 class IntentOption {
@@ -159,7 +159,6 @@ class _IntentScreenState extends State<IntentScreen>
   }
 
   void _routeUser() {
-    final intent = _answers[0];
     final experience = _answers[1];
 
     final destination = _resolveDestination(experience);
@@ -189,7 +188,7 @@ class _IntentScreenState extends State<IntentScreen>
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             decoration: BoxDecoration(
-              color: AppColors.cream,
+              color: app_color.cream,
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(24),
               ),
@@ -204,7 +203,7 @@ class _IntentScreenState extends State<IntentScreen>
                     _successTitle(experience),
                     textAlign: TextAlign.center,
                     style: baloo.bodySmall?.copyWith(
-                      color: AppColors.dark,
+                      color: app_color.dark,
                       fontWeight: FontWeight.w800,
                       fontSize: 20,
                     ),
@@ -214,7 +213,7 @@ class _IntentScreenState extends State<IntentScreen>
                     _successMessage(experience),
                     textAlign: TextAlign.center,
                     style: manrope.bodySmall?.copyWith(
-                      color: AppColors.dark.withOpacity(0.6),
+                      color: app_color.dark.withAlpha(60),
                       fontWeight: FontWeight.w500,
                       fontSize: 14.5,
                       height: 1.4,
@@ -248,8 +247,8 @@ class _IntentScreenState extends State<IntentScreen>
             ),
             decoration: BoxDecoration(
               color: isActive
-                  ? AppColors.greenDeep
-                  : AppColors.dark.withOpacity(0.08),
+                  ? app_color.greenDeep
+                  : app_color.dark.withAlpha(8),
               borderRadius: BorderRadius.circular(4),
             ),
           ),
@@ -268,13 +267,13 @@ class _IntentScreenState extends State<IntentScreen>
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 22),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppColors.greenDeep.withOpacity(0.08)
+              ? app_color.greenDeep.withAlpha(8)
               : Colors.white,
           borderRadius: BorderRadius.circular(18),
           border: Border.all(
             color: isSelected
-                ? AppColors.greenDeep
-                : AppColors.dark.withOpacity(0.08),
+                ? app_color.greenDeep
+                : app_color.dark.withAlpha(8),
             width: isSelected ? 2 : 1,
           ),
         ),
@@ -286,15 +285,15 @@ class _IntentScreenState extends State<IntentScreen>
               height: 34,
               width: 34,
               color: isSelected
-                  ? AppColors.greenDeep
-                  : AppColors.dark.withOpacity(0.45),
+                  ? app_color.greenDeep
+                  : app_color.dark.withAlpha(45),
             ),
             const YMargin(14),
             KidText(
               option.label,
               textAlign: TextAlign.center,
               style: manrope.bodySmall?.copyWith(
-                color: AppColors.dark,
+                color: app_color.dark,
                 fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
                 fontSize: 14.5,
                 height: 1.25,
@@ -321,7 +320,7 @@ class _IntentScreenState extends State<IntentScreen>
               KidText(
                 'Step ${_step + 1} of ${_questions.length}',
                 style: manrope.bodySmall?.copyWith(
-                  color: AppColors.dark.withOpacity(0.5),
+                  color: app_color.dark.withAlpha(5),
                   fontWeight: FontWeight.w700,
                   fontSize: 13,
                 ),
@@ -333,7 +332,7 @@ class _IntentScreenState extends State<IntentScreen>
               KidText(
                 _question.title,
                 style: baloo.bodySmall?.copyWith(
-                  color: AppColors.dark,
+                  color: app_color.dark,
                   fontWeight: FontWeight.w800,
                   fontSize: 28,
                   height: 1.2,
@@ -343,7 +342,7 @@ class _IntentScreenState extends State<IntentScreen>
               KidText(
                 _question.subtitle,
                 style: manrope.bodySmall?.copyWith(
-                  color: AppColors.dark.withAlpha(190),
+                  color: app_color.dark.withAlpha(190),
                   fontWeight: FontWeight.w500,
                   fontSize: 12,
                   height: 1.35,
@@ -369,9 +368,9 @@ class _IntentScreenState extends State<IntentScreen>
                 child: ElevatedButton(
                   onPressed: _selected == null ? null : _handleContinue,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.greenDeep,
-                    disabledBackgroundColor: AppColors.greenDeep.withOpacity(
-                      0.35,
+                    backgroundColor: app_color.greenDeep,
+                    disabledBackgroundColor: app_color.greenDeep.withAlpha(
+                      35,
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(

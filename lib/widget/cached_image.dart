@@ -12,7 +12,7 @@ class CachedImage extends StatelessWidget {
   final Alignment? alignment;
   final String? hash;
   const CachedImage({
-    Key? key,
+     super.key,
     required this.url,
     this.height = 60,
     this.width = 60,
@@ -21,7 +21,7 @@ class CachedImage extends StatelessWidget {
     this.alignment,
     this.placeholder,
     this.hash,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
