@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class InvestmentCalculator {
   static double calculateProfit({
     required double buyPrice,
@@ -23,18 +22,13 @@ class InvestmentCalculator {
   }
 }
 
-
 class ShareQuantityWidget extends StatefulWidget {
-  const ShareQuantityWidget({
-    super.key,
-    required this.sharePrice,
-  });
+  const ShareQuantityWidget({super.key, required this.sharePrice});
 
   final double sharePrice;
 
   @override
-  State<ShareQuantityWidget> createState() =>
-      _ShareQuantityWidgetState();
+  State<ShareQuantityWidget> createState() => _ShareQuantityWidgetState();
 }
 
 class _ShareQuantityWidgetState extends State<ShareQuantityWidget> {
@@ -47,9 +41,7 @@ class _ShareQuantityWidgetState extends State<ShareQuantityWidget> {
       children: [
         Text('Share price: ₦${widget.sharePrice.toStringAsFixed(2)}'),
         Text('Quantity: $quantity'),
-        Text(
-          'Total: ₦${(widget.sharePrice * quantity).toStringAsFixed(2)}',
-        ),
+        Text('Total: ₦${(widget.sharePrice * quantity).toStringAsFixed(2)}'),
         ElevatedButton(
           onPressed: () {
             setState(() {

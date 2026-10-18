@@ -8,7 +8,7 @@ void main() {
       const sellPrice = 130.0;
       const quantity = 10;
 
-     final profit = InvestmentCalculator.calculateProfit(
+      final profit = InvestmentCalculator.calculateProfit(
         buyPrice: buyPrice,
         sellPrice: sellPrice,
         quantity: quantity,
@@ -26,27 +26,27 @@ void main() {
 
       expect(profit, -200.0);
     });
-test('throws an error when quantity is negative', () {
-  expect(
-    () => InvestmentCalculator.calculateProfit(
-      buyPrice: 100,
-      sellPrice: 130,
-      quantity: -5,
-    ),
-    throwsArgumentError,
-  );
-});
+    test('throws an error when quantity is negative', () {
+      expect(
+        () => InvestmentCalculator.calculateProfit(
+          buyPrice: 100,
+          sellPrice: 130,
+          quantity: -5,
+        ),
+        throwsArgumentError,
+      );
+    });
 
-test('throws an error when buy price is negative', () {
-  expect(
-    () => InvestmentCalculator.calculateProfit(
-      buyPrice: -100,
-      sellPrice: 130,
-      quantity: 5,
-    ),
-    throwsArgumentError,
-  );
-});
+    test('throws an error when buy price is negative', () {
+      expect(
+        () => InvestmentCalculator.calculateProfit(
+          buyPrice: -100,
+          sellPrice: 130,
+          quantity: 5,
+        ),
+        throwsArgumentError,
+      );
+    });
     test('returns zero when buying and selling prices are equal', () {
       final profit = InvestmentCalculator.calculateProfit(
         buyPrice: 100,

@@ -4,13 +4,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ShareQuantityWidget', () {
-    testWidgets('displays the initial share price and quantity',
-        (WidgetTester tester) async {
+    testWidgets('displays the initial share price and quantity', (
+      WidgetTester tester,
+    ) async {
       await tester.pumpWidget(
         const MaterialApp(
-          home: Scaffold(
-            body: ShareQuantityWidget(sharePrice: 100),
-          ),
+          home: Scaffold(body: ShareQuantityWidget(sharePrice: 100)),
         ),
       );
 
@@ -19,13 +18,12 @@ void main() {
       expect(find.text('Total: ₦100.00'), findsOneWidget);
     });
 
-    testWidgets('increases quantity when Add share is tapped',
-        (WidgetTester tester) async {
+    testWidgets('increases quantity when Add share is tapped', (
+      WidgetTester tester,
+    ) async {
       await tester.pumpWidget(
         const MaterialApp(
-          home: Scaffold(
-            body: ShareQuantityWidget(sharePrice: 100),
-          ),
+          home: Scaffold(body: ShareQuantityWidget(sharePrice: 100)),
         ),
       );
       // Act
