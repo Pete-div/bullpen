@@ -12,6 +12,7 @@ class Constant {
   static void backToPrev(BuildContext context) {
     Navigator.of(context).pop();
   }
+
   static void sendToNext(
     BuildContext context,
     String route, {
