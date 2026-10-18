@@ -14,7 +14,6 @@ void main() {
 
     expect(find.byType(MyApp), findsOneWidget);
 
-    // Allow the scheduled splash-screen timers to finish.
     await tester.pump(const Duration(seconds: 4));
     await tester.pump();
 
