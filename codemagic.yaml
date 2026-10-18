@@ -31,7 +31,13 @@ workflows:
 
     artifacts:
       - build/app/outputs/flutter-apk/app-debug.apk
-
+    publishing:
+     slack:
+    channel: '#ne-build-apk'
+    notify_on_build_start: true
+    notify:
+      success: true
+      failure: true
 
 
 
